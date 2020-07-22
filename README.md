@@ -3,7 +3,9 @@
 # 2020/7/22
 
 ### 更新 
+多重积分的方法
 ```
+
  1 main.m                 主函数
  2 fin_135_waterline.m    返回135度时的吃水线方程截距
  3 find_COB               返回浮心函数
@@ -19,7 +21,7 @@
 可使用excel保存A B H  Moment
 
 ```
-使用组装后船的真实zh
+使用组装后船的真实质量与计算出的重心，带入函数绘图
 1 A_and_moment.m           宽与复原力矩的关系图         用plot函数
 2 B_and_momnet.m           长与复原力矩的关系图         用plot函数
 3 H_and_moment.m           高与复原力矩的关系图         用plot函数
