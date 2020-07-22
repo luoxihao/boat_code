@@ -19,7 +19,7 @@
 可使用excel保存A B H  Moment
 
 ```
-使用
+使用组装后船的真实zh
 1 A_and_moment.m           宽与复原力矩的关系图         用plot函数
 2 B_and_momnet.m           长与复原力矩的关系图         用plot函数
 3 H_and_moment.m           高与复原力矩的关系图         用plot函数
