@@ -6,15 +6,15 @@ clc
 %   center_gravity 船体重心
 Density = 0.1458; 
 
-A = 21;
-B = 4;
-H = 0.11;
-M = 0.964401193333393;
-center_gravity = 0.0722546191588597;
+A =21.1;
+B = 3.2;
+H = 0.12;
+M =1.0893;
+center_gravity =0.0707;
 boat.Moment = zeros(1,50,'double');
 
 
-for Angle = 91:1:150
+for Angle = 91:1:180
     disp(Angle);
     Y_MAX = sqrt(H./B);
     X_MAX = sqrt(H./A);
@@ -32,7 +32,7 @@ c = find_135_waterline(A,B,H,X_MAX,M,Angle);
 %-------复原力矩---------------------------------------------------------------------------------------------------------------------
     P = (Angle-270)./180.*pi;
     g = 9.8;
-    F = [2.*g.*M.*sin(P) 0 2.*g.*M.*cos(P)];                            %力部分初始化
+    F = [g.*M.*cos(P) 0 g.*M.*sin(P)];                            %力部分初始化
     Moment = cross(COB - COM,F);
     boat.Moment(Angle-90) = Moment(2);
 %---------------------------------------------------------------------------------------------------------------------------
@@ -44,7 +44,7 @@ title('小船倾斜角度与复原力矩的关系图');
 xlabel('倾斜角度 ');
 ylabel('复原力矩');
 hold on
-plot((91:150),boat.Moment);
+plot((91:180),boat.Moment);
 grid on
 % writetable(T,'temp.xlsx');
 % type 'temp.xlsx'
